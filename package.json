@@ -1,0 +1,23 @@
+{
+  "name": "project-starter",
+  "version": "1.0.0",
+  "description": "A starter package and gulpfile for continuous-build development.",
+  "author": "Josh Mobley",
+  "license": "GNU GPLv3",
+  "dependencies": {
+    "@types/jquery": "^2.0.40",
+    "babel-preset-latest": "^6.22.0",
+    "browser-sync": "^2.17.5",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.1.1",
+    "gulp-typescript": "^3.1.5",
+    "typescript": "^2.2.1"
+  },
+  "scripts": {
+    "start": "gulp"
+  }
+}

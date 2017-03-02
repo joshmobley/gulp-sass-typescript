@@ -1,0 +1,13 @@
+/* 
+** main.css
+** @description: entry point for css, used primarily for importing other stylesheets
+*/
+
+/* utilities */
+@import 'utilities/reset';
+@import 'utilities/colors';
+@import 'utilities/typography';
+
+/* components */
+@import 'components/header';
+
