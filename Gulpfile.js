@@ -10,6 +10,8 @@
 var gulp         = require('gulp');
 var browserSync  = require('browser-sync').create();
 var sass         = require('gulp-sass');
+var eslint       = require('gulp-eslint');
+var stylelint    = require('gulp-stylelint');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps   = require('gulp-sourcemaps');
 var typescript   = require('gulp-typescript');
@@ -53,7 +55,14 @@ gulp.task('sass', function() {
     });
 
     return gulp
-        .src( styles.path + styles.entry )      // file input
+        .src( styles.path + '**/*.scss' )      // file input
+        .pipe( stylelint({
+          failAfterError: false,
+          reporters: [
+            { formatter: 'string', console: true },
+            { formatter: 'verbose', console: true },
+          ],
+        }))
         .pipe( sourcemaps.init() )              // create sourcemaps
         .pipe( sassConfig )                     // configure postcss
         .on( 'error', errorHandler )            // report errors via notify
@@ -82,6 +91,11 @@ gulp.task("ts", function() {
 
     return gulp
         .src( scripts.path + '**/*.ts' )        // input files
+        .pipe( eslint({
+            fix: true,
+            parser: 'typescript-eslint-parser'
+        }))
+        .pipe( eslint.format() )
         .pipe( tsConfig )                       // transpile via babel
         .on( 'error', errorHandler )            // report error via notify
         .pipe( plumber() )                      // continue gulp build on error

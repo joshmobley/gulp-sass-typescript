@@ -1,0 +1,12 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "at-rule-empty-line-before": [ "always", {
+      except: [
+        "inside-block", "blockless-after-same-name-blockless"
+      ]
+    }],
+    "number-leading-zero": "never",
+    "selector-list-comma-newline-after": "always-multi-line"
+  }
+}

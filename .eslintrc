@@ -1,0 +1,24 @@
+{
+  "extends": "eslint:all",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+  },
+  "rules": {
+    "camelcase": ["warn", { "properties": "always" }],
+    "func-names": ["error", "as-needed"],
+    "id-length": [0],
+    "indent": ["error", 2],
+    "no-invalid-this": [0],
+    "no-underscore-dangle": [0],
+    "no-undef": [0],
+    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "object-curly-spacing": ["error", "always"],
+    "one-var": ["error", { "initialized": "never", "uninitialized": "always" }],
+    "quote-props": ["error", "as-needed"]
+  }
+}
